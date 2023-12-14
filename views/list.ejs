@@ -1,0 +1,33 @@
+<%- include("header") %> 
+
+    <form action="/" method="post">
+        <div class="flex bg-slate-400  w-fit p-3 rounded-3xl m-auto mt-[8%]">  
+                <h1 class="text-4xl text-white font-bold"><%= listTitle %></h1>     
+        </div>
+
+        <div class="flex flex-col space-y-10 p-5 bg-slate-400 w-fit rounded-3xl m-auto mt-[2%] items-center">
+
+            <ul>
+                <% for( let i = 0 ; i < newListItems.length ; i++){ %>
+                    
+                    <div class="flex border border-black rounded-2xl mt-1  bg-white">
+                        <input type="checkbox" class="ml-4 mt-5 mr-1 w-6 h-6 peer">
+                        <li class="text-3xl p-3 rounded-2xl font-light peer-checked:line-through decoration-dashed decoration-slate-700"><%=newListItems[i]%></li>
+                    </div>
+                <%}%>
+            </ul>
+
+            <div class="border border-black rounded-2xl mt-1 bg-white">
+                
+                <input type="text" name="newTask" class="text-3xl p-3  rounded-2xl font-light"  placeholder="Tasks">
+            </div>
+
+            <button type="submit" name="list" value="<%= listTitle  %>" class="text-2xl p-3 bg-slate-700 rounded-lg text-white font-bold ">
+            ⨁ Add More
+            </button> 
+        
+        
+        </div>
+    </form>
+
+    <%- include("footer") %>
